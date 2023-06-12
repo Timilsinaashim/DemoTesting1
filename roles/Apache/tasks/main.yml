@@ -1,0 +1,50 @@
+- name: install apache
+  apt:
+      name: 
+        - apache2
+      state: latest
+
+- name: restart apache2
+  ansible.builtin.service:
+    name: apache2
+    state: restarted
+
+- name: Delete files
+  file : 
+    path: /var/www/html/
+    state : absent 
+
+
+
+
+# - name: Install curl and gnupg2
+#   package:
+#     name:
+#       - curl
+#       - gnupg2
+#     state: present
+
+- name: Install npm
+  package:
+    name: npm
+    state: present
+
+- name: Install Node.js
+  package:
+    name: nodejs
+    update_cache: yes
+    state: present
+
+- name: Install Git
+  package:
+    name: git
+    state: present
+
+
+
+
+
+
+
+
+
